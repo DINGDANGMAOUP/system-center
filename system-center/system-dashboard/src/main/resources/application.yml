@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: @environment@
+mybatis-plus:
+  type-aliases-package: com.yinlu.system.dashboard.model
+  mapper-locations: classpath:mapper/*.xml
+  global-config:
+    banner: false
+server:
+  port: 8887
