@@ -2,7 +2,7 @@
 package com.yinlu.system.common.swagger.annotation;
 
 import com.yinlu.system.common.swagger.config.SwaggerAutoConfiguration;
-import com.yinlu.system.common.swagger.support.SwaggerProperties;
+import com.yinlu.system.common.swagger.properties.SwaggerProperties;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Inherited;

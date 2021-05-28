@@ -1,5 +1,6 @@
 package com.yinlu.system.dashboard.model;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -10,6 +11,7 @@ import lombok.Data;
 
 /**
  * 
+ * @author dzhao1
  * @TableName system_data_source
  */
 @TableName(value ="system_data_source")
@@ -54,13 +56,13 @@ public class SystemDataSource implements Serializable {
     /**
      * 创建时间
      */
-    @TableField(value = "create_at")
+    @TableField(value = "create_at",fill = FieldFill.INSERT)
     private LocalDateTime createAt;
 
     /**
      * 更新时间
      */
-    @TableField(value = "modified_at")
+    @TableField(value = "modified_at",fill = FieldFill.UPDATE)
     private LocalDateTime modifiedAt;
 
     @TableField(exist = false)

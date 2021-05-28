@@ -2,7 +2,7 @@ package com.yinlu.system.generator.controller;
 
 import com.baomidou.dynamic.datasource.toolkit.DynamicDataSourceContextHolder;
 import com.yinlu.system.generator.mapper.MysqlMapper;
-import com.yinlu.system.generator.model.MysqlTableInfo;
+import com.yinlu.system.generator.pojo.dto.MysqlTableInfo;
 import java.util.List;
 import javax.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;

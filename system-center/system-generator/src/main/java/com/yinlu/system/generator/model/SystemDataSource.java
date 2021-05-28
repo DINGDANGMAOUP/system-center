@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 import lombok.Data;
 
 /**
- * 
+ *
  * @author dzhao1
  * @TableName system_data_source
  */
@@ -64,6 +64,13 @@ public class SystemDataSource implements Serializable {
      */
     @TableField(value = "modified_at",fill = FieldFill.UPDATE)
     private LocalDateTime modifiedAt;
+    /**
+     * 是否默认数据源
+     */
+    @TableField("primary")
+    private Boolean primary;
+    @TableField("data_type")
+    private String dataType;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -87,7 +94,9 @@ public class SystemDataSource implements Serializable {
             && (this.getUrl() == null ? other.getUrl() == null : this.getUrl().equals(other.getUrl()))
             && (this.getDriver() == null ? other.getDriver() == null : this.getDriver().equals(other.getDriver()))
             && (this.getCreateAt() == null ? other.getCreateAt() == null : this.getCreateAt().equals(other.getCreateAt()))
-            && (this.getModifiedAt() == null ? other.getModifiedAt() == null : this.getModifiedAt().equals(other.getModifiedAt()));
+            && (this.getModifiedAt() == null ? other.getModifiedAt() == null : this.getModifiedAt().equals(other.getModifiedAt())
+            && (this.getPrimary() == null ? other.getPrimary() == null : this.getPrimary().equals(other.getPrimary()))
+            && (this.getDataType() == null ? other.getDataType() == null : this.getDataType().equals(other.getDataType())));
     }
 
     @Override
@@ -102,6 +111,8 @@ public class SystemDataSource implements Serializable {
         result = prime * result + ((getDriver() == null) ? 0 : getDriver().hashCode());
         result = prime * result + ((getCreateAt() == null) ? 0 : getCreateAt().hashCode());
         result = prime * result + ((getModifiedAt() == null) ? 0 : getModifiedAt().hashCode());
+        result = prime * result + ((getPrimary()==null) ? 0 : getPrimary().hashCode());
+        result = prime * result + ((getDataType()==null) ? 0 : getDataType().hashCode());
         return result;
     }
 
@@ -119,6 +130,8 @@ public class SystemDataSource implements Serializable {
         sb.append(", driver=").append(driver);
         sb.append(", createAt=").append(createAt);
         sb.append(", modifiedAt=").append(modifiedAt);
+        sb.append(",dataType=").append(dataType);
+        sb.append(",Primary").append(primary);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

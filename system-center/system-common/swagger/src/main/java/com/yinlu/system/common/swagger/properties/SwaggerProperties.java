@@ -1,4 +1,4 @@
-package com.yinlu.system.common.swagger.support;
+package com.yinlu.system.common.swagger.properties;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -8,3 +8,10 @@ mybatis-plus:
     banner: false
 server:
   port: 8887
+swagger:
+  contact:
+    name: "kuroneko"
+    email: "dingdangmaoup@vip.qq.com"
+    url: "https://kuroneko.fun"
+  enabled: true
+  base-package: com.yinlu.system.dashboard

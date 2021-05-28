@@ -1,0 +1,8 @@
+# 多数据源存储库
+customize:
+  datasource:
+    tableName: system_data_source
+    url: jdbc:mysql://localhost:3306/system_center?serverTimezone=UTC
+    username: root
+    password: root
+    driverClassName: com.mysql.cj.jdbc.Driver

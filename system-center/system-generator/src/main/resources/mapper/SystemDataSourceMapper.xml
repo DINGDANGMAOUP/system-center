@@ -6,13 +6,13 @@
 
     <resultMap id="BaseResultMap" type="com.yinlu.system.generator.model.SystemDataSource">
             <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="source_name" column="source_name" jdbcType="VARCHAR"/>
+            <result property="sourceName" column="source_name" jdbcType="VARCHAR"/>
             <result property="username" column="username" jdbcType="VARCHAR"/>
             <result property="password" column="password" jdbcType="VARCHAR"/>
             <result property="url" column="url" jdbcType="VARCHAR"/>
             <result property="driver" column="driver" jdbcType="VARCHAR"/>
-            <result property="create_at" column="create_at" jdbcType="TIMESTAMP"/>
-            <result property="modified_at" column="modified_at" jdbcType="TIMESTAMP"/>
+            <result property="createAt" column="create_at" jdbcType="TIMESTAMP"/>
+            <result property="modifiedAt" column="modified_at" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">

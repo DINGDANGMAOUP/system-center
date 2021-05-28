@@ -9,7 +9,7 @@ public class DataSourceDTO {
 
     @NotBlank
     @ApiModelProperty(value = "连接池名称", example = "test")
-    private String pollName;
+    private String sourceName;
 
     @NotBlank
     @ApiModelProperty(value = "JDBC driver", example = "org.h2.Driver")

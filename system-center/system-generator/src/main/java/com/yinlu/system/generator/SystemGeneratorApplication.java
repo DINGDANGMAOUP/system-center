@@ -11,7 +11,6 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
 @EnableSwagger
 @MapperScan("com.yinlu.system.generator.mapper")
 public class SystemGeneratorApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(SystemGeneratorApplication.class, args);
     }

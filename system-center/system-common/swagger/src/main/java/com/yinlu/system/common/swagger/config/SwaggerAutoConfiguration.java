@@ -1,11 +1,10 @@
 package com.yinlu.system.common.swagger.config;
 
-import com.yinlu.system.common.swagger.support.SwaggerProperties;
+import com.yinlu.system.common.swagger.properties.SwaggerProperties;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import springfox.documentation.builders.ApiInfoBuilder;
