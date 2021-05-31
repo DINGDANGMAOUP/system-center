@@ -22,7 +22,7 @@
       AND TABLE_NAME = #{tableName};
   </select>
   <select id="listToTable" resultType="com.yinlu.system.generator.model.TableName">
-    select table_name from information_schema.tables where table_schema=#{sourceName}
+    select table_name as 'TABLE_NAME' from information_schema.tables where table_schema=#{sourceName}
   </select>
 
 </mapper>

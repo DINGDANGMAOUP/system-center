@@ -16,6 +16,7 @@ public class MysqlTableInfo {
   /**
    * 表名
    */
+  @TableField("TABLE_NAME")
   String tableName;
   /**
    * 字段

@@ -1,6 +1,5 @@
 package com.yinlu.system.dashboard.model;
 
-import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -56,14 +55,26 @@ public class SystemDataSource implements Serializable {
     /**
      * 创建时间
      */
-    @TableField(value = "create_at",fill = FieldFill.INSERT)
+    @TableField(value = "create_at")
     private LocalDateTime createAt;
 
     /**
      * 更新时间
      */
-    @TableField(value = "modified_at",fill = FieldFill.UPDATE)
+    @TableField(value = "modified_at")
     private LocalDateTime modifiedAt;
+
+    /**
+     * 是否默认数据源
+     */
+    @TableField(value = "def")
+    private Boolean def;
+
+    /**
+     * 数据库类型
+     */
+    @TableField(value = "db_type")
+    private String dbType;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -87,7 +98,9 @@ public class SystemDataSource implements Serializable {
             && (this.getUrl() == null ? other.getUrl() == null : this.getUrl().equals(other.getUrl()))
             && (this.getDriver() == null ? other.getDriver() == null : this.getDriver().equals(other.getDriver()))
             && (this.getCreateAt() == null ? other.getCreateAt() == null : this.getCreateAt().equals(other.getCreateAt()))
-            && (this.getModifiedAt() == null ? other.getModifiedAt() == null : this.getModifiedAt().equals(other.getModifiedAt()));
+            && (this.getModifiedAt() == null ? other.getModifiedAt() == null : this.getModifiedAt().equals(other.getModifiedAt()))
+            && (this.getDef() == null ? other.getDef() == null : this.getDef().equals(other.getDef()))
+            && (this.getDbType() == null ? other.getDbType() == null : this.getDbType().equals(other.getDbType()));
     }
 
     @Override
@@ -102,6 +115,8 @@ public class SystemDataSource implements Serializable {
         result = prime * result + ((getDriver() == null) ? 0 : getDriver().hashCode());
         result = prime * result + ((getCreateAt() == null) ? 0 : getCreateAt().hashCode());
         result = prime * result + ((getModifiedAt() == null) ? 0 : getModifiedAt().hashCode());
+        result = prime * result + ((getDef() == null) ? 0 : getDef().hashCode());
+        result = prime * result + ((getDbType() == null) ? 0 : getDbType().hashCode());
         return result;
     }
 
@@ -112,13 +127,15 @@ public class SystemDataSource implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", source_name=").append(sourceName);
+        sb.append(", sourceName=").append(sourceName);
         sb.append(", username=").append(username);
         sb.append(", password=").append(password);
         sb.append(", url=").append(url);
         sb.append(", driver=").append(driver);
-        sb.append(", create_at=").append(createAt);
-        sb.append(", modified_at=").append(modifiedAt);
+        sb.append(", createAt=").append(createAt);
+        sb.append(", modifiedAt=").append(modifiedAt);
+        sb.append(", def=").append(def);
+        sb.append(", dbType=").append(dbType);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

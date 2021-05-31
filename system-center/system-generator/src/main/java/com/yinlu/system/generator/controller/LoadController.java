@@ -108,11 +108,11 @@ public class LoadController {
     return Result.success(ds.getCurrentDataSources().keySet());
   }
 
-  @DeleteMapping
+  @DeleteMapping("remove/{sourceName}")
   @ApiOperation("删除数据源")
-  public Result remove(String name) {
+  public Result remove(@PathVariable("sourceName") String sourceName) {
     DynamicRoutingDataSource ds = (DynamicRoutingDataSource) dataSource;
-    ds.removeDataSource(name);
+    ds.removeDataSource(sourceName);
     return Result.success();
   }
   @GetMapping("push/{ds}")

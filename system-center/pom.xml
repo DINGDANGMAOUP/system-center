@@ -67,6 +67,11 @@
       </dependency>
       <dependency>
         <groupId>com.yinlu</groupId>
+        <artifactId>system-common-auto-generator</artifactId>
+        <version>${system-center.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yinlu</groupId>
         <artifactId>system-core</artifactId>
         <version>${system-center.version}</version>
       </dependency>

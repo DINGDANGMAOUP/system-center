@@ -50,6 +50,27 @@ public class DBController {
     return Result.success(dataInfoDTOList);
   }
 
+  /**
+   * (搁置)
+   * 设置默认数据源 UPDATE `system_data_source` SET `def` = (`source_name` = 2)
+   * @return
+   */
+//  @GetMapping("/def")
+//  @ApiOperation("设置默认数据源")
+//  public Result defDB() {
+//    DynamicRoutingDataSource ds = (DynamicRoutingDataSource) dataSource;
+//    ds.setPrimary();
+//    Set<String> sourceNameList = ds.getCurrentDataSources().keySet();
+//    List<DataInfoDTO> dataInfoDTOList = new ArrayList<>();
+//    sourceNameList.forEach(
+//        s -> {
+//          DynamicDataSourceContextHolder.push(s);
+//          List<TableName> tableNames = mysqlService.listToTable(s);
+//          dataInfoDTOList.add(new DataInfoDTO(s, tableNames));
+//        });
+//    return Result.success(dataInfoDTOList);
+//  }
+
   @GetMapping("/list/{sourceName}")
   @ApiOperation("获取数据源所有表名")
   public Result listToTable(@PathVariable("sourceName") String sourceName) {

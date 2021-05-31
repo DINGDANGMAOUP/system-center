@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.yinlu.system.common.auto.generator.config.AutoGeneratorConfig

@@ -8,8 +8,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="system-dashboard" />
-        <module name="system-core" />
+        <module name="auto-generator" />
         <module name="system-generator" />
+        <module name="system-core" />
         <module name="mybatis-plus" />
         <module name="dynamic-datasource" />
         <module name="swagger" />
