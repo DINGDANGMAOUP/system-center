@@ -17,3 +17,5 @@ swagger:
     url: "https://kuroneko.fun"
   enabled: true
   base-package: com.yinlu.system.generator
+  version: 1.0.0
+  title: generator

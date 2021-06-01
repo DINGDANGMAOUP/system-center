@@ -15,12 +15,16 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import com.yinlu.system.generator.controller.LoadController;
 import com.yinlu.system.generator.mapper.MysqlMapper;
+import com.yinlu.system.generator.model.SystemDataSource;
 import com.yinlu.system.generator.model.TableName;
+import com.yinlu.system.generator.service.SystemDataSourceService;
 import com.yinlu.system.generator.utils.ZipUtils;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import javax.annotation.Resource;
 import javax.sql.DataSource;
@@ -39,6 +43,7 @@ MysqlMapper mapper;
 DataSource dataSource;
 
 
+
   @Resource
   AutoGenerator autoGenerator;
   @Resource
@@ -52,7 +57,20 @@ DataSource dataSource;
   @Resource
   TemplateConfig templateConfig;
 
+  @Resource
+  SystemDataSourceService systemDataSourceService;
+@Test
+  void file() throws IOException {
+  List<SystemDataSource> list = systemDataSourceService.list();
+  log.info(list.toString());
+//  String path="D:/a/s/c";
+//  String file1=path+File.separator+"d.txt";
+//    File dir = new File(path);
+//    dir.mkdirs();
+//  File file = new File(file1);
+//  file.createNewFile();
 
+  }
 
   @Test
   void test(){
@@ -84,9 +102,9 @@ DataSource dataSource;
     //groupId
     String demoGroupId="com.demo";
     //artifactId
-    String demoArtifactId="demo";
+    String demoArtifactId="exam";
     //package
-    String demoPackage="com.demo";
+    String demoPackage=demoGroupId+"."+demoArtifactId;
     //version
     String demoVersion="1.0.0";
     // 生成原型  mvn archetype:generate
@@ -113,13 +131,10 @@ DataSource dataSource;
             + demoPackage
             + "\" "
             + "\"-Dversion="+demoVersion+"\" ";
-//    String mvn =
-//        "&&  mvn archetype:generate  \"-DinteractiveMode=false\" \"-DarchetypeGroupId=com.yinlu\" \"-DarchetypeArtifactId=code-generator-archetype\" \"-DarchetypeCatalog=local\" \"-DgroupId=com.example\" \"-DartifactId=demo\" \"-Dpackage=demo\" \"-Dversion=1.0\"";
 
 // 生成项目后的根目录
     String demoPath=currentDirectory+File.separator+demoArtifactId;
     File file = new File(currentDirectory);
-//    String command = "cd " + currentDirectory + mvn;
     if (!file.exists()) {
       file.mkdirs();
     }
@@ -137,20 +152,20 @@ DataSource dataSource;
     globalConfig.setActiveRecord(true);
     globalConfig.setBaseResultMap(true);
     globalConfig.setEnableCache(true);
-    autoGenerator.setGlobalConfig(globalConfig);
+//    autoGenerator.setGlobalConfig(globalConfig);
 
     // 数据源配置
     dataSourceConfig.setUrl("jdbc:mysql://localhost:3306/kuroneko?serverTimezone=UTC");
     dataSourceConfig.setDriverName("com.mysql.cj.jdbc.Driver");
     dataSourceConfig.setUsername("root");
     dataSourceConfig.setPassword("root");
-    autoGenerator.setDataSource(dataSourceConfig);
+//    autoGenerator.setDataSource(dataSourceConfig);
     // 包配置
     packageConfig.setModuleName(demoArtifactId);
-    packageConfig.setParent(demoPackage);
+    packageConfig.setParent(demoGroupId);
     packageConfig.setEntity("model");
 //    packageConfig.setXml("/src/main/java/resources");
-    autoGenerator.setPackageInfo(packageConfig);
+//    autoGenerator.setPackageInfo(packageConfig);
     // 策略配置
     strategy.setNaming(NamingStrategy.underline_to_camel);
     strategy.setColumnNaming(NamingStrategy.underline_to_camel);
@@ -158,14 +173,15 @@ DataSource dataSource;
     strategy.setRestControllerStyle(true);
     strategy.setChainModel(true);
     strategy.setEntityTableFieldAnnotationEnable(true);
-
+    templateConfig.setXml(null);
+//    autoGenerator.setTemplate(templateConfig);
     // 公共父类
     // 写于父类中的公共字段
     strategy.setSuperEntityColumns("id");
 //    strategy.setInclude("sys_user,sys_log");
     strategy.setControllerMappingHyphenStyle(true);
 //    strategy.setTablePrefix("demo_");
-    autoGenerator.setStrategy(strategy);
+//    autoGenerator.setStrategy(strategy);
 
     // 自定义配置
     InjectionConfig cfg = new InjectionConfig() {
@@ -176,9 +192,6 @@ DataSource dataSource;
     };
     // 如果模板引擎是 freemarker
     String templatePath = "/templates/mapper.xml.ftl";
-    // 如果模板引擎是 velocity
-    // String templatePath = "/templates/mapper.xml.vm";
-
     // 自定义输出配置
     List<FileOutConfig> focList = new ArrayList<>();
     // 自定义配置会被优先输出
@@ -195,6 +208,7 @@ DataSource dataSource;
     autoGenerator.execute();
 
 //    打包zip
+
     String zipPath=currentDirectory+File.separator+demoArtifactId;
     String buildZip=zipPath+".zip";
     FileOutputStream fileOutputStream = new FileOutputStream(buildZip);

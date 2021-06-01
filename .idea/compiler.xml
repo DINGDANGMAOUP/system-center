@@ -11,9 +11,11 @@
         <module name="auto-generator" />
         <module name="system-generator" />
         <module name="system-core" />
+        <module name="knife4j" />
         <module name="mybatis-plus" />
         <module name="dynamic-datasource" />
         <module name="swagger" />
+        <module name="knife4j-ui" />
       </profile>
     </annotationProcessing>
   </component>

@@ -34,6 +34,12 @@ public class DynamicDataSourceConfig {
           throws SQLException {
         ResultSet rs = statement.executeQuery(String.format(SysConstant.DB_SOURCE_SQL, tableName));
         Map<String, DataSourceProperty> map = new HashMap<>(16);
+        DataSourceProperty master = new DataSourceProperty();
+        master.setUsername(username);
+        master.setPassword(password);
+        master.setUrl(url);
+        master.setDriverClassName(driverClassName);
+        map.put("master", master);
         while (rs.next()) {
           String sourceName = rs.getString("source_name");
           String username = rs.getString("username");

@@ -5,12 +5,10 @@ import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-/**
- * @author dzhao1
- */
+/** @author dzhao1 */
 @Data
 @AllArgsConstructor
 public class DataInfoDTO {
   private String sourceName;
-  List<TableName> tableNames;
+  private List<TableName> tableNames;
 }

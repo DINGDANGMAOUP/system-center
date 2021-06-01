@@ -13,6 +13,7 @@
     <module>system-center</module>
   </modules>
   <properties>
+    <knife4j.version>2.0.8</knife4j.version>
     <system-center.version>1.0.0-SNAPSHOT</system-center.version>
     <spring-boot.version>2.5.0</spring-boot.version>
     <dynamic-datasource.version>3.3.6</dynamic-datasource.version>
@@ -21,6 +22,7 @@
     <mybatis-plus-generator.version>3.4.1</mybatis-plus-generator.version>
     <freemarker.version>2.3.31</freemarker.version>
     <ant.version>1.10.5</ant.version>
+    <hutool.version>5.6.6</hutool.version>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
   </properties>
@@ -50,6 +52,16 @@
       </dependency>
       <dependency>
         <groupId>com.yinlu</groupId>
+        <artifactId>system-common-knife4j</artifactId>
+        <version>${system-center.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yinlu</groupId>
+        <artifactId>system-common-knife4j-ui</artifactId>
+        <version>${system-center.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yinlu</groupId>
         <artifactId>system-core</artifactId>
         <version>${system-center.version}</version>
       </dependency>
@@ -58,6 +70,7 @@
         <artifactId>system-generator</artifactId>
         <version>${system-center.version}</version>
       </dependency>
+
     </dependencies>
   </dependencyManagement>
 

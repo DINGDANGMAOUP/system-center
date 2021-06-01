@@ -8,19 +8,17 @@ import lombok.Data;
 
 /**
  * mysql 表详情对象
- * @author dzhao1 */
+ *
+ * @author dzhao1
+ */
 @Data
 @AllArgsConstructor
 public class MysqlTableInfo {
 
-  /**
-   * 表名
-   */
+  /** 表名 */
   @TableField("TABLE_NAME")
-  String tableName;
-  /**
-   * 字段
-   */
+  private String tableName;
+  /** 字段 */
   @TableField(exist = false)
-  List<MysqlTableField> columns;
+  private List<MysqlTableField> columns;
 }

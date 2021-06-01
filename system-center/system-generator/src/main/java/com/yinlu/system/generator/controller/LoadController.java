@@ -11,6 +11,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import javax.annotation.Resource;
 import javax.sql.DataSource;
+import javax.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -30,6 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RequestMapping("/datasources")
 @Api(tags = "添加删除数据源")
+@Validated
 public class LoadController {
 
   @Resource
@@ -50,7 +52,7 @@ public class LoadController {
   }
   @GetMapping("/switch/{sourceName}")
   @ApiOperation("切换默认数据源")
-  public Result Primary(@PathVariable("sourceName") String sourceName){
+  public Result Primary(@PathVariable("sourceName") @NotBlank String sourceName){
     DynamicRoutingDataSource ds = (DynamicRoutingDataSource) dataSource;
     ds.setPrimary(sourceName);
     return  Result.success();
@@ -110,14 +112,14 @@ public class LoadController {
 
   @DeleteMapping("remove/{sourceName}")
   @ApiOperation("删除数据源")
-  public Result remove(@PathVariable("sourceName") String sourceName) {
+  public Result remove(@PathVariable("sourceName") @NotBlank String sourceName) {
     DynamicRoutingDataSource ds = (DynamicRoutingDataSource) dataSource;
     ds.removeDataSource(sourceName);
     return Result.success();
   }
   @GetMapping("push/{ds}")
   @ApiOperation("切换数据源")
-  public Result push(@PathVariable("ds") String ds){
+  public Result push(@PathVariable("ds") @NotBlank String ds){
     String mysql = DynamicDataSourceContextHolder.push(ds);
     return Result.success(mysql);
   }

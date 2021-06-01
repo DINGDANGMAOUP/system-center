@@ -6,7 +6,7 @@
         <option name="generateConfig">
           <GenerateConfig>
             <option name="annotationType" value="MYBATIS_PLUS3" />
-            <option name="basePackage" value="com.yinlu.system.dashboard" />
+            <option name="basePackage" value="com.yinlu.system.generator" />
             <option name="basePath" value="src/main/java" />
             <option name="domainObjectName" value="SystemDataSource" />
             <option name="encoding" value="UTF-8" />
@@ -19,8 +19,8 @@
               </list>
             </option>
             <option name="jsr310Support" value="true" />
-            <option name="moduleName" value="system-dashboard" />
-            <option name="modulePath" value="$PROJECT_DIR$/system-center/system-dashboard" />
+            <option name="moduleName" value="system-generator" />
+            <option name="modulePath" value="$PROJECT_DIR$/system-center/system-generator" />
             <option name="needToStringHashcodeEquals" value="true" />
             <option name="needsComment" value="true" />
             <option name="relativePackage" value="model" />
