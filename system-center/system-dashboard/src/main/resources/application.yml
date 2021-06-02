@@ -15,3 +15,5 @@ swagger:
     url: "https://kuroneko.fun"
   enabled: true
   base-package: com.yinlu.system.dashboard
+  title: dashboard
+  version: 1.0.0

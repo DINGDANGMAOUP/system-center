@@ -45,7 +45,7 @@ public class CodeGeneratorUtil {
     String buildPath = mavenArchTypeDTO.getBuildPath();
     String demoPath=buildPath+ File.separator+mavenArchTypeDTO.getDemoArtifactId();
     // 全局配置
-    globalConfig.setOutputDir(buildPath+ File.separator+"src/main/java");
+    globalConfig.setOutputDir(demoPath+ File.separator+"src/main/java");
     globalConfig.setAuthor("kuroneko");
     globalConfig.setOpen(false);
     globalConfig.setSwagger2(true);

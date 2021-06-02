@@ -3,7 +3,6 @@ package com.yinlu.system.generator.utils;
 import com.yinlu.system.generator.pojo.dto.MavenArchTypeDTO;
 import java.io.File;
 import java.io.IOException;
-import jdk.jshell.JShell;
 
 /**
  * @author dzhao1
@@ -44,8 +43,6 @@ public class MavenUtil {
             + demoPackage
             + "\" "
             + "\"-Dversion="+demoVersion+"\" ";
-    // 生成项目后的根目录
-
     File file = new File(buildPath);
     if (!file.exists()) {
       file.mkdirs();

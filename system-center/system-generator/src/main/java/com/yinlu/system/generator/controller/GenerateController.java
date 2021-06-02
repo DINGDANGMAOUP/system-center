@@ -12,12 +12,14 @@ import com.yinlu.system.generator.utils.CodeGeneratorUtil;
 import com.yinlu.system.generator.utils.MavenUtil;
 import com.yinlu.system.generator.utils.ZipUtils;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,8 +37,10 @@ public class GenerateController {
   SystemDataSourceService systemDataSourceService;
   @Resource
   CodeGeneratorUtil codeGeneratorUtil;
-  @PostMapping("produce")
-  public Result produce(@RequestBody DemoBuildInfoVO demoBuildInfoVO , HttpServerResponse response)
+
+  @PostMapping("pkg")
+  @ApiOperation("生成demo")
+  public Result pkg(@RequestBody DemoBuildInfoVO demoBuildInfoVO , HttpServletResponse response)
       throws IOException, InterruptedException {
     String author = demoBuildInfoVO.getAuthor();
     String modelName = demoBuildInfoVO.getModelName();
@@ -44,7 +48,6 @@ public class GenerateController {
     String tableName = demoBuildInfoVO.getTableName();
     SystemDataSource ds = systemDataSourceService.getOne(
         Wrappers.<SystemDataSource>lambdaQuery().eq(SystemDataSource::getSourceName, sourceName));
-
     MavenArchTypeDTO mavenArchTypeDTO =
         MavenArchTypeDTO.builder()
             .archetypeGroupId("com.yinlu")
@@ -60,12 +63,11 @@ public class GenerateController {
         .build();
     codeGeneratorUtil.execute(build);
     String zipPath = mavenArchTypeDTO.getBuildPath() + File.separator + mavenArchTypeDTO.getDemoArtifactId();
-    String buildZip=zipPath+".zip";
-    FileOutputStream fileOutputStream = new FileOutputStream(buildZip);
-    log.info(buildZip);
-    ZipUtils.toZip(zipPath,fileOutputStream,true);
-    response.write(new File(buildZip));
-    fileOutputStream.close();
+//    String buildZip=zipPath+".zip";
+//    FileOutputStream fileOutputStream = new FileOutputStream(buildZip);
+//    log.info(buildZip);
+    ZipUtils.toZip(zipPath,response.getOutputStream(),true);
+//    fileOutputStream.close();
     return Result.success();
   }
 }

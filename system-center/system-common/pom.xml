@@ -17,6 +17,9 @@
     <module>auto-generator</module>
     <module>knife4j</module>
     <module>knife4j-ui</module>
+    <module>wx-miniapp</module>
+    <module>wx-mp</module>
+    <module>wx-cp</module>
   </modules>
 <dependencies>
   <dependency>

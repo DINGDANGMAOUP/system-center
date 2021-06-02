@@ -13,6 +13,9 @@
     <module>system-center</module>
   </modules>
   <properties>
+    <wx-cp.version>4.0.0</wx-cp.version>
+    <wx-mp.version>4.0.0</wx-mp.version>
+    <wx-miniapp.version>4.0.0</wx-miniapp.version>
     <knife4j.version>2.0.8</knife4j.version>
     <system-center.version>1.0.0-SNAPSHOT</system-center.version>
     <spring-boot.version>2.5.0</spring-boot.version>
@@ -70,7 +73,21 @@
         <artifactId>system-generator</artifactId>
         <version>${system-center.version}</version>
       </dependency>
-
+      <dependency>
+        <groupId>com.yinlu</groupId>
+        <artifactId>system-common-wx-miniapp</artifactId>
+        <version>${system-center.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yinlu</groupId>
+        <artifactId>system-common-wx-cp</artifactId>
+        <version>${system-center.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yinlu</groupId>
+        <artifactId>system-common-wx-mp</artifactId>
+        <version>${system-center.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
