@@ -15,6 +15,7 @@
     <module>system-common</module>
     <module>system-core</module>
     <module>system-dashboard</module>
+    <module>system-module-builder</module>
   </modules>
   <properties>
     <maven.compiler.source>11</maven.compiler.source>

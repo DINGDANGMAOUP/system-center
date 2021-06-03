@@ -12,7 +12,6 @@ import com.baomidou.mybatisplus.generator.config.StrategyConfig;
 import com.baomidou.mybatisplus.generator.config.TemplateConfig;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import com.yinlu.system.generator.controller.LoadController;
 import com.yinlu.system.generator.mapper.MysqlMapper;
 import com.yinlu.system.generator.model.SystemDataSource;
@@ -61,8 +60,10 @@ DataSource dataSource;
   SystemDataSourceService systemDataSourceService;
 @Test
   void file() throws IOException {
-  List<SystemDataSource> list = systemDataSourceService.list();
-  log.info(list.toString());
+//  File file = new File(System.getProperty("user.dir"));
+//  log.info(file.getName());
+//  List<SystemDataSource> list = systemDataSourceService.list();
+//  log.info(list.toString());
 //  String path="D:/a/s/c";
 //  String file1=path+File.separator+"d.txt";
 //    File dir = new File(path);

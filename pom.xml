@@ -13,6 +13,8 @@
     <module>system-center</module>
   </modules>
   <properties>
+    <commons-lang3.version>3.1</commons-lang3.version>
+    <commons-io.version>2.6</commons-io.version>
     <wx-cp.version>4.0.0</wx-cp.version>
     <wx-mp.version>4.0.0</wx-mp.version>
     <wx-miniapp.version>4.0.0</wx-miniapp.version>
@@ -71,6 +73,11 @@
       <dependency>
         <groupId>com.yinlu</groupId>
         <artifactId>system-generator</artifactId>
+        <version>${system-center.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.yinlu</groupId>
+        <artifactId>system-module-builder</artifactId>
         <version>${system-center.version}</version>
       </dependency>
       <dependency>

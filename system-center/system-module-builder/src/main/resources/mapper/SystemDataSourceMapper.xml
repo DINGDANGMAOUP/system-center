@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yinlu.system.generator.mapper.SystemDataSourceMapper">
+
+    <resultMap id="BaseResultMap" type="com.yinlu.system.module.builder.model.SystemDataSource">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="sourceName" column="source_name" jdbcType="VARCHAR"/>
+            <result property="username" column="username" jdbcType="VARCHAR"/>
+            <result property="password" column="password" jdbcType="VARCHAR"/>
+            <result property="url" column="url" jdbcType="VARCHAR"/>
+            <result property="driver" column="driver" jdbcType="VARCHAR"/>
+            <result property="createAt" column="create_at" jdbcType="TIMESTAMP"/>
+            <result property="modifiedAt" column="modified_at" jdbcType="TIMESTAMP"/>
+            <result property="def" column="def" jdbcType="BIT"/>
+            <result property="dbType" column="db_type" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,source_name,username,
+        password,url,driver,
+        create_at,modified_at,def,
+        db_type
+    </sql>
+</mapper>

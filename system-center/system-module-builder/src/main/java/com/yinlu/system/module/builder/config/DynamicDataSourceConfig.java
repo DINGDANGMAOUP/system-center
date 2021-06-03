@@ -1,4 +1,4 @@
-package com.yinlu.system.generator.config;
+package com.yinlu.system.module.builder.config;
 
 import com.baomidou.dynamic.datasource.provider.AbstractJdbcDataSourceProvider;
 import com.baomidou.dynamic.datasource.provider.DynamicDataSourceProvider;

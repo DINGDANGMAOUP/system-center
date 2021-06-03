@@ -7,17 +7,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="system-dashboard" />
         <module name="wx-miniapp" />
         <module name="auto-generator" />
         <module name="system-generator" />
         <module name="system-core" />
         <module name="wx-mp" />
+        <module name="dynamic-datasource" />
+        <module name="swagger" />
+        <module name="system-dashboard" />
+        <module name="system-module-builder" />
         <module name="knife4j" />
         <module name="mybatis-plus" />
         <module name="wx-cp" />
-        <module name="dynamic-datasource" />
-        <module name="swagger" />
         <module name="knife4j-ui" />
       </profile>
     </annotationProcessing>

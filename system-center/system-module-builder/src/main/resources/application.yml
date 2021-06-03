@@ -1,0 +1,23 @@
+server:
+    port: 8777
+spring:
+    application:
+        name: system-module-builder
+    profiles:
+        active: @environment@
+    freemarker:
+        cache: false
+        charset: utf-8
+        expose-request-attributes: true
+        expose-session-attributes: true
+        suffix: .ftl
+        template-loader-path: classpath:/init/
+    web:
+        resources:
+            static-locations: classpath:/static/# 应用服务 WEB 访问端口
+mybatis-plus:
+    type-aliases-package: com.yinlu.system.module.builder.model
+    mapper-locations: classpath:mapper/*.xml
+    global-config:
+        banner: false
+

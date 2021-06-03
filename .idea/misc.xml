@@ -10,6 +10,8 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/system-center/wx-mp/pom.xml" />
+        <option value="$PROJECT_DIR$/system-module-builder/pom.xml" />
+        <option value="$PROJECT_DIR$/system-module-generator/pom.xml" />
       </set>
     </option>
   </component>
