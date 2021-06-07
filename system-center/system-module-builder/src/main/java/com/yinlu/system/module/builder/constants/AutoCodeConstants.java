@@ -25,5 +25,8 @@ public interface AutoCodeConstants {
    * 初始化绝对路径 cache
    */
   String CACHE_INIT=AutoCodeConstants.CURRENT_PATH+ File.separator+AutoCodeConstants.CACHE_PATH;
-  String CODING="UTF-8";
+  /**
+   * 编码规则
+   */
+  String ENCODE="UTF-8";
 }

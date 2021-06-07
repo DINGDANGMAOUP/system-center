@@ -23,7 +23,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.ui.freemarker.FreeMarkerTemplateUtils;
 
 /**
- * 初始化java文件
+ * 初始化配置文件
  * @author dzhao1
  */
 @Component
@@ -91,7 +91,7 @@ public class InitFileHandler {
     fileBuilds.forEach(build->{
       try {
         FileUtils.touch(build.getFile());
-        FileUtils.writeStringToFile(build.getFile(), build.getOut(), AutoCodeConstants.CODING);
+        FileUtils.writeStringToFile(build.getFile(), build.getOut(), AutoCodeConstants.ENCODE);
       } catch (IOException e) {
         e.printStackTrace();
       }

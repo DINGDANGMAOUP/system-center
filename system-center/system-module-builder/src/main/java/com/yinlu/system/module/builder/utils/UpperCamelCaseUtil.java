@@ -1,28 +1,22 @@
 package com.yinlu.system.module.builder.utils;
 
-import java.util.Arrays;
-import java.util.stream.IntStream;
-
-/**
- * @author dzhao1
- */
+/** @author dzhao1 */
 public class UpperCamelCaseUtil {
-  public static String build(String str){
+  public static String build(String str) {
     char[] chars = str.toCharArray();
     StringBuilder sbr = new StringBuilder();
-    boolean upFlag=true;
+    boolean flag = true;
     for (char s : chars) {
-      if (upFlag){
+      if (flag) {
         sbr.append(Character.toUpperCase(s));
-        upFlag=false;
-      }else if (s=='-'){
-        upFlag=true;
-      }else {
+        flag = false;
+      } else if (s == '-') {
+        flag = true;
+      } else {
         sbr.append(s);
-        upFlag=false;
+        flag = false;
       }
     }
     return sbr.toString();
   }
-
 }
