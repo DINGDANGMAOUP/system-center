@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.yinlu.system.core.base.BaseEntity;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import lombok.Data;
@@ -15,7 +16,7 @@ import lombok.Data;
  */
 @TableName(value ="system_data_source")
 @Data
-public class SystemDataSource implements Serializable {
+public class SystemDataSource extends BaseEntity implements Serializable{
     /**
      * 主键id
      */

@@ -12,6 +12,10 @@
   <artifactId>system-core</artifactId>
   <dependencies>
     <dependency>
+      <groupId>com.yinlu</groupId>
+      <artifactId>system-common-mybatis-plus</artifactId>
+    </dependency>
+    <dependency>
       <groupId>cn.hutool</groupId>
       <artifactId>hutool-all</artifactId>
       <version>${hutool.version}</version>

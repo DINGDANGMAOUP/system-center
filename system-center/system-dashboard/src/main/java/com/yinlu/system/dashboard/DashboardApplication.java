@@ -11,7 +11,6 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
  */
 @EnableOpenApi
 @EnableSwagger
-@MapperScan("com.yinlu.system.dashboard.mapper")
 @SpringBootApplication
 public class DashboardApplication {
   public static void main(String[] args) {
