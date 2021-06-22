@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.yinlu.system.core.base.BaseEntity;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 import lombok.Data;
 
 /**
@@ -79,6 +80,9 @@ public class SysUser extends BaseEntity implements Serializable {
      */
     @TableField(value = "del_flag")
     private Byte delFlag;
+
+    @TableField(exist = false)
+    private List<SysRole> roles;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
