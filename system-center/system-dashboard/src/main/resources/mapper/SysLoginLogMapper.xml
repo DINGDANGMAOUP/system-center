@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yinlu.system.dashboard.mapper.SysLoginLogMapper">
+
+    <resultMap id="BaseResultMap" type="com.yinlu.system.dashboard.model.SysLoginLog">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="user_name" column="user_name" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="VARCHAR"/>
+            <result property="ip" column="ip" jdbcType="VARCHAR"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="last_update_by" column="last_update_by" jdbcType="VARCHAR"/>
+            <result property="last_update_time" column="last_update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_name,status,
+        ip,create_by,create_time,
+        last_update_by,last_update_time
+    </sql>
+</mapper>

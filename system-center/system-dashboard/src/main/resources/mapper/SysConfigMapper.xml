@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yinlu.system.dashboard.mapper.SysConfigMapper">
+
+    <resultMap id="BaseResultMap" type="com.yinlu.system.dashboard.model.SysConfig">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="value" column="value" jdbcType="VARCHAR"/>
+            <result property="label" column="label" jdbcType="VARCHAR"/>
+            <result property="type" column="type" jdbcType="VARCHAR"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="sort" column="sort" jdbcType="DECIMAL"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="last_update_by" column="last_update_by" jdbcType="VARCHAR"/>
+            <result property="last_update_time" column="last_update_time" jdbcType="TIMESTAMP"/>
+            <result property="remarks" column="remarks" jdbcType="VARCHAR"/>
+            <result property="del_flag" column="del_flag" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,value,label,
+        type,description,sort,
+        create_by,create_time,last_update_by,
+        last_update_time,remarks,del_flag
+    </sql>
+</mapper>

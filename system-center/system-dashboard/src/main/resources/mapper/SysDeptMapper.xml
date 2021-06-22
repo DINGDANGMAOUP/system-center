@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yinlu.system.dashboard.mapper.SysDeptMapper">
+
+    <resultMap id="BaseResultMap" type="com.yinlu.system.dashboard.model.SysDept">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="parent_id" column="parent_id" jdbcType="BIGINT"/>
+            <result property="order_num" column="order_num" jdbcType="INTEGER"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="last_update_by" column="last_update_by" jdbcType="VARCHAR"/>
+            <result property="last_update_time" column="last_update_time" jdbcType="TIMESTAMP"/>
+            <result property="del_flag" column="del_flag" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,parent_id,
+        order_num,create_by,create_time,
+        last_update_by,last_update_time,del_flag
+    </sql>
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yinlu.system.dashboard.mapper.SysMenuMapper">
+
+    <resultMap id="BaseResultMap" type="com.yinlu.system.dashboard.model.SysMenu">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="parent_id" column="parent_id" jdbcType="BIGINT"/>
+            <result property="url" column="url" jdbcType="VARCHAR"/>
+            <result property="perms" column="perms" jdbcType="VARCHAR"/>
+            <result property="type" column="type" jdbcType="INTEGER"/>
+            <result property="icon" column="icon" jdbcType="VARCHAR"/>
+            <result property="order_num" column="order_num" jdbcType="INTEGER"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="last_update_by" column="last_update_by" jdbcType="VARCHAR"/>
+            <result property="last_update_time" column="last_update_time" jdbcType="TIMESTAMP"/>
+            <result property="del_flag" column="del_flag" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,parent_id,
+        url,perms,type,
+        icon,order_num,create_by,
+        create_time,last_update_by,last_update_time,
+        del_flag
+    </sql>
+  <select id="findByUserName" resultType="com.yinlu.system.dashboard.model.SysMenu">
+    select m.* from sys_menu m, sys_user u, sys_user_role ur, sys_role_menu rm
+    where u.name = #{userName,jdbcType=BIGINT} and u.id = ur.user_id
+      and ur.role_id = rm.role_id and rm.menu_id = m.id
+  </select>
+
+</mapper>
