@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yinlu.system.dashboard.mapper.SysMenuMetaMapper">
+
+    <resultMap id="BaseResultMap" type="com.yinlu.system.dashboard.model.SysMenuMeta">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="menu_id" column="menu_id" jdbcType="BIGINT"/>
+            <result property="meta_id" column="meta_id" jdbcType="BIGINT"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_at" column="create_at" jdbcType="TIMESTAMP"/>
+            <result property="modified_by" column="modified_by" jdbcType="VARCHAR"/>
+            <result property="modified_at" column="modified_at" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,menu_id,meta_id,
+        create_by,create_at,modified_by,
+        modified_at
+    </sql>
+</mapper>

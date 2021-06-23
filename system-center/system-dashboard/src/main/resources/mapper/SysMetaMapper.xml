@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yinlu.system.dashboard.mapper.SysMetaMapper">
+
+    <resultMap id="BaseResultMap" type="com.yinlu.system.dashboard.model.SysMeta">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="title" column="title" jdbcType="VARCHAR"/>
+            <result property="ignore_auth" column="ignore_auth" jdbcType="BIT"/>
+            <result property="roles" column="roles" jdbcType="VARCHAR"/>
+            <result property="ignore_keep_alive" column="ignore_keep_alive" jdbcType="BIT"/>
+            <result property="affix" column="affix" jdbcType="BIT"/>
+            <result property="icon" column="icon" jdbcType="VARCHAR"/>
+            <result property="frame_src" column="frame_src" jdbcType="VARCHAR"/>
+            <result property="transition_name" column="transition_name" jdbcType="VARCHAR"/>
+            <result property="hide_breadcrumb" column="hide_breadcrumb" jdbcType="BIT"/>
+            <result property="carry_param" column="carry_param" jdbcType="VARCHAR"/>
+            <result property="hide_childrenIn_menu" column="hide_childrenIn_menu" jdbcType="BIT"/>
+            <result property="current_active_menu" column="current_active_menu" jdbcType="VARCHAR"/>
+            <result property="hide_tab" column="hide_tab" jdbcType="BIT"/>
+            <result property="hide_menu" column="hide_menu" jdbcType="BIT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,title,ignore_auth,
+        roles,ignore_keep_alive,affix,
+        icon,frame_src,transition_name,
+        hide_breadcrumb,carry_param,hide_childrenIn_menu,
+        current_active_menu,hide_tab,hide_menu
+    </sql>
+</mapper>
