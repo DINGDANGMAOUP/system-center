@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.yinlu.system.core.base.BaseEntity;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -28,8 +29,8 @@ public class SysUser extends BaseEntity implements Serializable {
     /**
      * 昵称
      */
-    @TableField(value = "nick_name")
-    private String nickName;
+    @TableField(value = "nickname")
+    private String nickname;
 
     /**
      * 头像
@@ -41,12 +42,14 @@ public class SysUser extends BaseEntity implements Serializable {
      * 密码
      */
     @TableField(value = "password")
+    @JsonIgnore
     private String password;
 
     /**
      * 加密盐
      */
     @TableField(value = "salt")
+    @JsonIgnore
     private String salt;
 
     /**

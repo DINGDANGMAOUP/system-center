@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.yinlu.system.core.base.BaseEntity;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 import lombok.Data;
 
 /**
@@ -42,6 +43,13 @@ public class SysDept extends BaseEntity implements Serializable {
      */
     @TableField(value = "del_flag")
     private Byte delFlag;
+
+    @TableField(exist = false)
+    private List<SysDept> children;
+    @TableField(exist = false)
+    private String parentName;
+    @TableField(exist = false)
+    private Integer level;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

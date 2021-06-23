@@ -209,4 +209,13 @@ public class JwtTokenUtils implements Serializable {
         return token;
     }
 
+	/**
+	 * 获取当前登入用户名
+	 * @param httpServletRequest 请求体
+	 * @return 用户名
+	 */
+	public static String getUsernameFromRequest(HttpServletRequest httpServletRequest) {
+		String token = getToken(httpServletRequest);
+		return getUsernameFromToken(token);
+	}
 }

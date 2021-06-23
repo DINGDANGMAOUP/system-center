@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.yinlu.system.core.base.BaseEntity;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 import lombok.Data;
 
 /**
@@ -33,8 +34,8 @@ public class SysMenu extends BaseEntity implements Serializable {
     /**
      * 菜单URL,类型：1.普通页面（如用户管理， /sys/user） 2.嵌套完整外部页面，以http(s)开头的链接 3.嵌套服务器页面，使用iframe:前缀+目标URL(如SQL监控， iframe:/druid/login.html, iframe:前缀会替换成服务器地址)
      */
-    @TableField(value = "url")
-    private String url;
+    @TableField(value = "path")
+    private String path;
 
     /**
      * 授权(多个用逗号分隔，如：sys:user:add,sys:user:edit)
@@ -67,7 +68,25 @@ public class SysMenu extends BaseEntity implements Serializable {
      */
     @TableField(value = "del_flag")
     private Byte delFlag;
+    /**
+     * 组件
+     */
+    @TableField(value = "component")
+    private String component;
+    /**
+     * 重定向
+     */
+    @TableField(value = "redirect")
+    private String redirect;
 
+    @TableField(exist = false)
+    private String parentName;
+    @TableField(exist = false)
+    private Integer level;
+    @TableField(exist = false)
+    private SysMeta meta;
+    @TableField(exist = false)
+    private List<SysMenu> children;
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 

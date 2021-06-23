@@ -19,9 +19,9 @@ public class SysDeptController {
   @Resource
   SysDeptService sysDeptService;
 
-  @GetMapping("/list")
+  @GetMapping("/getDeptList")
   public Result list(){
-    List<SysDept> list = sysDeptService.list();
-    return Result.success(list);
+    List<SysDept> sysDepts= sysDeptService.findTree();
+    return Result.success(sysDepts);
   }
 }

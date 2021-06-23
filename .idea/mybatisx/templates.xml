@@ -8,13 +8,13 @@
             <option name="annotationType" value="MYBATIS_PLUS3" />
             <option name="basePackage" value="com.yinlu.system.dashboard" />
             <option name="basePath" value="src/main/java" />
-            <option name="domainObjectName" value="SysUserToken" />
+            <option name="domainObjectName" value="SysMenuMeta" />
             <option name="encoding" value="UTF-8" />
             <option name="extraTemplateNames">
               <list>
+                <option value="mapperInterface" />
                 <option value="mapperXml" />
                 <option value="serviceImpl" />
-                <option value="mapperInterface" />
                 <option value="serviceInterface" />
               </list>
             </option>
@@ -25,8 +25,8 @@
             <option name="relativePackage" value="model" />
             <option name="removedPrefix" value="" />
             <option name="removedSuffix" value="" />
-            <option name="rootClass" value="BaseEntity" />
-            <option name="tableName" value="sys_user_token" />
+            <option name="rootClass" value="com.yinlu.system.core.base.BaseEntity" />
+            <option name="tableName" value="sys_menu_meta" />
             <option name="targetProject" value="$PROJECT_DIR$" />
             <option name="templatesName" value="mybatis-plus3" />
             <option name="useActualColumnAnnotationInject" value="true" />
