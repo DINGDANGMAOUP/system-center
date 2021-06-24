@@ -8,6 +8,7 @@ import com.yinlu.system.core.result.Result;
 import com.yinlu.system.dashboard.model.SysRole;
 import com.yinlu.system.dashboard.model.SysUser;
 import com.yinlu.system.dashboard.model.SysUserRole;
+import com.yinlu.system.dashboard.service.SysDeptService;
 import com.yinlu.system.dashboard.service.SysRoleService;
 import com.yinlu.system.dashboard.service.SysUserRoleService;
 import com.yinlu.system.dashboard.service.SysUserService;
@@ -40,6 +41,8 @@ public class SysUserController {
   SysUserRoleService sysUserRoleService;
   @Resource
   SysRoleService sysRoleService;
+  @Resource
+  SysDeptService sysDeptService;
 
 
 
@@ -47,6 +50,12 @@ public class SysUserController {
   public Result listByPage(@RequestParam("page") Integer page,@RequestParam("pageSize") Integer pageSize,@RequestParam(value = "deptId",required = false) Integer deptId,@RequestParam(value = "account",required = false)String account,@RequestParam(value = "nickname",required = false)String nickname ){
     Page<SysUser> userPage = new Page<>(page, pageSize);
     Page<SysUser> sysUserPage = sysUserService.page(userPage);
+    sysUserPage.getRecords().forEach(sysUser -> {
+      SysUserRole userRole = sysUserRoleService
+          .getOne(Wrappers.<SysUserRole>lambdaQuery().eq(SysUserRole::getUserId, sysUser.getId()));
+      SysRole role = sysRoleService.getById(userRole.getRoleId());
+      sysUser.setRole(role.getName());
+    });
     return Result.success(sysUserPage);
   }
 

@@ -37,6 +37,8 @@ public class SysRole extends BaseEntity implements Serializable {
      */
     @TableField(value = "del_flag")
     private Byte delFlag;
+    @TableField(value = "status")
+    private Byte status;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

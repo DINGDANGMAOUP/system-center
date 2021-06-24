@@ -83,7 +83,12 @@ public class SysUser extends BaseEntity implements Serializable {
      */
     @TableField(value = "del_flag")
     private Byte delFlag;
-
+    @TableField(value = "remark")
+    private String remark;
+    @TableField(exist = false)
+    private String role;
+    @TableField(exist = false)
+    private String dept;
     @TableField(exist = false)
     private List<SysRole> roles;
 
