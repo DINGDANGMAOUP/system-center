@@ -9,6 +9,7 @@ import com.yinlu.system.core.base.BaseEntity;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 import lombok.Data;
 
 /**
@@ -86,9 +87,7 @@ public class SysUser extends BaseEntity implements Serializable {
     @TableField(value = "remark")
     private String remark;
     @TableField(exist = false)
-    private String role;
-    @TableField(exist = false)
-    private String dept;
+    private Set<String> role;
     @TableField(exist = false)
     private List<SysRole> roles;
 
